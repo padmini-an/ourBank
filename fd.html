@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	 	<title>Fixed Deposit</title>
+		<hr>
+		<h3><center>Fixed Deposit Calculation<c/enter></h3>
+		<hr>
+		<style>
+		</style>
+		<script>
+
+		function setText() {
+			var tf = document.f1.rate;
+			var val=document.getElementById("dur").value;
+			var num=Number(val);
+			if(num>=0 && num<=2){
+				tf.value=5;
+			}else if(num>=3 && num<=5){
+				tf.value=6;
+			}else if(num>=6 && num<=10){
+				tf.value=7;
+			}
+
+		}
+
+
+			function setText1()
+		{
+			var txt = document.f1.duration.value
+			var tf = document.f1.rate
+			tf.value = tf;
+		}
+		
+			function calculate()
+		{
+			var amt=Number(document.f1.amount.value);
+			var rate=Number(document.f1.rate.value);
+			var dur=Number(document.f1.dur.value);
+			var si=(amt*rate*dur)/100;
+			amt=amt+si;
+			alert("Maturity amount "+amt);
+		}	
+			
+		</script>
+	</head>
+	<body style="background-color:powderblue;">
+		 <div class="full-page">
+        <div class="navbar">
+            <h3>
+			<form name="f1" action="demo1.html">
+				<br><br><br><br><br><br>
+				Principal Amount   : <input type="number" name="amount"><br>
+				Duration:
+				<input type="text" id="dur" name="type" onChange="setText()" /> <br>
+				
+				Rate of interest : <input type="text" id="rate" name="rate" /><br>
+						 
+				
+				 <input type="button" onClick="calculate()" value="Calculate FD">
+				<input type="reset" onClick="reset()" value="Reset">
+				<input type="submit" value="home page">
+			</form>
+		</h3>
+        </div>
+	</body>
+</html>
